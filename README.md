@@ -11,25 +11,32 @@
   
     import * as Linking from 'expo-linking';
     
-  2. Luego creamos una función que en este caso contendrá una funnción asincrona, la cuál se encargará  de recibir los parámetros del path que se creará, y los parametros que se vayan a mandar a la otra app:
+  2. Luego creamos una función que en este caso contendrá una función asincrona, la cuál se encargará  de recibir los parámetros del path que se creará, y los parametros que se vayan a mandar a la otra app:
+
+  En esta función se ocupan los siguientes métodos de 'expo-linking':
+
+  - canOpenURL(): Se usa para comprobar si efectivamente se están dando las condiciones para poder abrir la otra aplicación,
+  la cual debe contener un "eschema" determinado en el App.json de la otra aplicación.
+  Nos retorna un booleano que nos indica si efectivamente se puede abrir la url con un 'TRUE' o si no se pudo con un 'FALSE'.
+
+  - openURL(): Este es el método que se usa para poder abrir la otra aplicación una vez que se confirma con el método anterior que está todo correctamente y se puede ejecutar
+
+  - openSettings(): Es para abrir una configuración en caso de que no se pueda abrir la URL indicada.
+
   
   ~~~
   
   const linkToB = async (path, param1, param2) => {
 
-  // Aquí se crea la URL
+  // Aquí se crea la URL y se le aregan los valores de los parametros recibidos en ella.
   const url = `wptbobpr://${path}?param1=${param1}&param2=${param2}`
 
   // Se crea una variable para ver si es posible abrir la URL
   let isPossibleOpenURL = false;
   
   try {
-    // Se usa el canOpenURL() de expo-linking, lo que nos retorna un booleano que nos indica si 
-    // efectivamente se puede abrir la url
     const isPossibleOpenURL = await Linking.canOpenURL(url);
     
-    // Si es posible entonces isPossibleOpenURL será 'TRUE' y se abrirá la otra app con el método
-    // openURL de expo-linking
     if (isPossibleOpenURL) {
       await Linking.openURL(url);
     }
