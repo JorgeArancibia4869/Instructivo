@@ -91,4 +91,4 @@
   
   ![Ejemplo 1:](https://github.com/JorgeArancibia4869/Instructivo/blob/main/ejemplo1.png)
   
-  En donde a través de los input, podémos setear el path (el cual debe concordar con el path de la aplicación que recibe los datos) y los valores a enviar, y al apretar el botón "Open second App" Automáticamente abrirá la otra aplicación y enviará los parámetros.
+  En donde a través de los input, podémos setear el path (el cual debe concordar con el path de la aplicación que recibe los datos) y los valores a enviar, y al apretar el botón "Open B" Automáticamente abrirá la otra aplicación y enviará los parámetros.
