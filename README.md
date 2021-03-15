@@ -62,7 +62,7 @@
 
   return (
     <View style={styles.container}>
-      <Text>Mock de Alice</Text>
+      <Text>Mock de A</Text>
       <StatusBar style="auto" />
       <TextInput
       style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
