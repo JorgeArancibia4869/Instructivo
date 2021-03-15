@@ -45,7 +45,6 @@
       }
     }
   }
-  console.log('Alice link to Bob Finish');
 }
   
   ~~~
