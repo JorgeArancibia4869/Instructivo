@@ -1,6 +1,6 @@
 # Como ejecutar Driver-app desde Talana con DeepLinking
 
-## Deeplinking
+## DeepLinking
 
   Es un método que consiste en utilizar un enlace profundo o hipervínculo que dirige directamente a un lugar en específico sin tener que pasar por la entrada principal de la aplicación.
 
