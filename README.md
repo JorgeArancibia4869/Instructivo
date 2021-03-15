@@ -80,7 +80,7 @@
       value={value3}
     />
       {/* <Text>Url creada: </Text> */}
-      <Button title="Open second App" onPress={ () => linkToB(value, value2, value3) } />
+      <Button title="Open B" onPress={ () => linkToB(value, value2, value3) } />
     </View>
   );
 }
