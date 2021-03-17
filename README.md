@@ -28,33 +28,34 @@
   
   ~~~
   
-  const linkToB = async (path, param1, param2) => {
+  const linkToB = async (scheme, path, username, token) => {
+  const url = `${scheme}:/${path}?username=${username}&token=${token}`
 
-  // Aquí se crea la URL y se le aregan los valores de los parametros recibidos en ella.
-  const url = `wptdriverapp:/${path}?param1=${param1}&param2=${param2}`
-
-  // Se crea una variable para ver si es posible abrir la URL
+  console.log('Path: ' + url);
   let isPossibleOpenURL = false;
-  
-  try {
-    const isPossibleOpenURL = await Linking.canOpenURL(url);
-    
-    if (isPossibleOpenURL) {
-      await Linking.openURL(url);
-    }
-  } catch(e) {
-
-    // Si isPossibleOpenURL es 'FALSE' entonces se ejecutará el método openSetting
-    // Abrirá la configuración
-    if (isPossibleOpenURL) {
-      try {
-        await Linking.openSettings()
-      } catch(e) {
-        console.error(e)
+    try {
+      const isPossibleOpenURL = await Linking.canOpenURL(url);
+      console.log('isPossibleOpenURL='+isPossibleOpenURL);
+      if (isPossibleOpenURL) {
+        await Linking.openURL(url);
+        console.log("openURL resolved");
+      } else {
+        Alert.alert('Advertencia', 'No hay ninguna app registrada con el scheme ' + scheme);
+      }
+    } catch(e) {
+      console.log(isPossibleOpenURL ? "openURL rejection" : 'canOpenURL rejection');
+      console.error(e);
+      if (isPossibleOpenURL) {
+        try {
+          await Linking.openSettings()
+        } catch(e) {
+          console.error(e)
+        }
       }
     }
+  console.log('Alice link to Bob Finish');
   }
-}
+
   
   ~~~
   
@@ -100,6 +101,6 @@
   
   ![Ejemplo 1:](https://github.com/JorgeArancibia4869/Instructivo/blob/main/ejemplo1.png)
 
-  Para levantar la aplicación DriverApp, en vez de poner "path2" poner "/login", y como argumentos el usuario indicado y el token.
+  Para levantar la aplicación DriverApp, en vez de poner "path2" poner "/login", y como argumentos, el usuario indicado y el token.
   
   En donde a través de los input, podémos setear el path (el cual debe concordar con el path de la aplicación que recibe los datos) y los valores a enviar, y al apretar el botón "Open B" Automáticamente abrirá la otra aplicación y enviará los parámetros.
