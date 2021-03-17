@@ -99,5 +99,7 @@
   4. Con esto, obtenemos como resultado la siguiente vista:
   
   ![Ejemplo 1:](https://github.com/JorgeArancibia4869/Instructivo/blob/main/ejemplo1.png)
+
+  Para levantar la aplicación DriverApp, en vez de poner "path2" poner "/login", y como argumentos el usuario indicado y el token.
   
   En donde a través de los input, podémos setear el path (el cual debe concordar con el path de la aplicación que recibe los datos) y los valores a enviar, y al apretar el botón "Open B" Automáticamente abrirá la otra aplicación y enviará los parámetros.
