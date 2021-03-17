@@ -3,6 +3,8 @@
 ## DeepLinking
 
   Es un método que consiste en utilizar un enlace profundo o hipervínculo que dirige directamente a un lugar en específico sin tener que pasar por la entrada principal de la aplicación.
+  
+  Para levantar la aplicación de conductor desde Talana es necesario abrir por DeepLinking la siguiente URL a modo de ejemplo: "wptdriverapp://login?username=juanito&token=1234567890"
 
 
 ## Dicho esto, veremos un ejemplo de como ejecutar otra app y enviarle información ocupando deeplinking con "Expo" de React-native:
@@ -20,8 +22,6 @@
   Nos retorna un booleano que nos indica si efectivamente se puede abrir la url con un 'TRUE' o si no se pudo con un 'FALSE'.
 
   - openURL(): Este es el método que se usa para poder abrir la otra aplicación una vez que se confirma con el método anterior que está todo correctamente y se puede ejecutar
-
-  - openSettings(): Es para abrir una configuración en caso de que no se pueda abrir la URL indicada.
 
   
   ~~~
