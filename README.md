@@ -6,7 +6,7 @@
   
   Para levantar la aplicación de conductor desde Talana es necesario abrir por DeepLinking la siguiente URL a modo de ejemplo: 
   
-      "wptdriverapp://login?username=juanito&token=1234567890"
+      wptdriverapp://login?username=juanito&token=1234567890
 
 
 ## Dicho esto, veremos un ejemplo de como ejecutar otra app y enviarle información ocupando deeplinking con "Expo" de React-native:
@@ -31,7 +31,7 @@
   const linkToB = async (path, param1, param2) => {
 
   // Aquí se crea la URL y se le aregan los valores de los parametros recibidos en ella.
-  const url = `wptdriverapp://${path}?param1=${param1}&param2=${param2}`
+  const url = `wptdriverapp:/${path}?param1=${param1}&param2=${param2}`
 
   // Se crea una variable para ver si es posible abrir la URL
   let isPossibleOpenURL = false;
