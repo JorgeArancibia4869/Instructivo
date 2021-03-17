@@ -35,16 +35,12 @@
   let isPossibleOpenURL = false;
     try {
       const isPossibleOpenURL = await Linking.canOpenURL(url);
-      console.log('isPossibleOpenURL='+isPossibleOpenURL);
       if (isPossibleOpenURL) {
         await Linking.openURL(url);
-        console.log("openURL resolved");
       } else {
         Alert.alert('Advertencia', 'No hay ninguna app registrada con el scheme ' + scheme);
       }
     } catch(e) {
-      console.log(isPossibleOpenURL ? "openURL rejection" : 'canOpenURL rejection');
-      console.error(e);
       if (isPossibleOpenURL) {
         try {
           await Linking.openSettings()
@@ -53,7 +49,6 @@
         }
       }
     }
-  console.log('Alice link to Bob Finish');
   }
 
   
